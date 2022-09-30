@@ -10,7 +10,11 @@ const Loadmorepage = () => {
     );
     const data = await res.json();
     setItems([...items, ...data]);
-    console.log(data);
+   // console.log(data);
+    if(data.length===0){
+      // console.log("None")
+      document.getElementsByClassName("loadmore")[0].style.display ='none';
+    }
   };
 
   useEffect(() => {
@@ -18,9 +22,8 @@ const Loadmorepage = () => {
   }, [page]);
 
   const loadmore = () => {
-    //setLimit(limit + 3);
     let newpage = page + 1;
-    console.log(newpage);
+    //console.log(newpage);
     setpage(newpage);
   };
 
@@ -43,7 +46,7 @@ const Loadmorepage = () => {
           );
         })}
 
-        <div className="col-12 p-3 text-center">
+        <div className="loadmore col-12 p-3 text-center">
           <button className="btn btn-dark w-50 text-center" onClick={loadmore}>
             Load More ...
           </button>
