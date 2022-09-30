@@ -18,7 +18,7 @@ export default function InfiniteScroll() {
       });
     currentOffset += 10;
   };
-
+  console.log(pokemon);
   const handleScroll = (e) => {
     // console.log(e.target.documentElement.scrollTop);
     // console.log(window.innerHeight);
