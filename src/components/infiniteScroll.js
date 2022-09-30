@@ -2,30 +2,26 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function InfiniteScroll() {
-  let currentOffset = 0;
+  
   const [pokemon, setPokemon] = useState([]);
   const [limit, setLimit] = useState(10);
+  const [page, setpage] = useState(0);
 
   const loadTenPokemon = () => {
     const tenPokemon = [];
     axios
       .get(
-        `https://jsonplaceholder.typicode.com/photos?_limit=${limit}&_offset=${currentOffset}`
+        `https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=${limit}`
       )
       .then(({ data }) => {
         data.forEach((p) => tenPokemon.push(p.title));
         setPokemon((pokemon) => [...pokemon, ...tenPokemon]);
       });
-    currentOffset += 10;
+      let newpage = page + 1;
+      setpage(newpage);
   };
-  console.log(pokemon);
+  // console.log(pokemon);
   const handleScroll = (e) => {
-    // console.log(e.target.documentElement.scrollTop);
-    // console.log(window.innerHeight);
-    // console.log(e.target.documentElement.scrollHeight);
-    // console.log(
-    //   Math.ceil(e.target.documentElement.scrollTop + window.innerHeight)
-    // );
     const scrollHeight = e.target.documentElement.scrollHeight;
     const currentHeight = Math.ceil(
       e.target.documentElement.scrollTop + window.innerHeight
