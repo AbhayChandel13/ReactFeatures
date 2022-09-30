@@ -3,22 +3,25 @@ import React, { useState, useEffect } from "react";
 const Loadmorepage = () => {
   const [items, setItems] = useState([]);
   const [limit, setLimit] = useState(3);
-
+  const [page,setpage]    = useState(1)
   const getapi = async () => {
     const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts?_page=1&_limit=${limit}`
+      `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`
     );
     const data = await res.json();
-    setItems(data);
+    setItems([...items,...data]);
     console.log(data);
   };
 
   useEffect(() => {
     getapi();
-  }, [limit]);
+  }, [page]);
 
   const loadmore = () => {
-    setLimit(limit + 3);
+    //setLimit(limit + 3);
+   let newpage = page+1;
+   console.log(newpage);
+   setpage(newpage);
   };
 
   return (
@@ -31,7 +34,7 @@ const Loadmorepage = () => {
                 <div className="card-body">
                   <h2 className="card-title text-center ">Id :{item.id} </h2>
                   <h6 className="card-title text-center">
-                    title :{item.title}{" "}
+                    title :{item.title}
                   </h6>
                   <p className="card-text">{item.body}</p>
                 </div>
@@ -39,12 +42,13 @@ const Loadmorepage = () => {
             </div>
           );
         })}
+        
         <div className="col-12 p-3 text-center">
-          <button className="btn btn-dark w-50 text-center" onClick={loadmore}>
-            {" "}
+          <button className="btn btn-dark w-50 text-center" onClick={loadmore}>            
             Load More ...
           </button>
         </div>
+         
       </div>
     </div>
   );
