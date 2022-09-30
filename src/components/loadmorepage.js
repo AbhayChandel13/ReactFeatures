@@ -10,10 +10,10 @@ const Loadmorepage = () => {
     );
     const data = await res.json();
     setItems([...items, ...data]);
-   // console.log(data);
-    if(data.length===0){
+    // console.log(data);
+    if (data.length === 0) {
       // console.log("None")
-      document.getElementsByClassName("loadmore")[0].style.display ='none';
+      document.getElementsByClassName("loadmore")[0].style.display = "none";
     }
   };
 
