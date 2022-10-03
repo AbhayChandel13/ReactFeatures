@@ -10,6 +10,7 @@ import Service from './components/service';
 import Blog from './components/blog';
 import Loadmorepage from './components/loadmorepage';
 import InfiniteScroll from './components/infiniteScroll';
+import AddUser from './components/AddUser';
 function App() {
   return(
 		  <>
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/blog" element={<Blog />}></Route>
 					<Route path="/loadmore" element={<Loadmorepage />}></Route>
 					<Route path="/scroll" element={<InfiniteScroll />}></Route>
+					<Route path="/add" element={<AddUser />}></Route>
 				</Routes>	
 				<Footer />
 			</BrowserRouter>
