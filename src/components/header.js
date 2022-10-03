@@ -16,7 +16,7 @@ function Header(){
                         <li className="nav-item"><NavLink className="nav-link" to="/blog">Blog</NavLink></li>
                         <li className="nav-item"><NavLink className="nav-link" to="/loadmore">Load More</NavLink></li>
                         <li className="nav-item"><NavLink className="nav-link" to="/scroll">Scroll</NavLink></li>
-                        <li className="nav-item"><NavLink className="nav-link" to="/add">Add User</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link" to="/add">CRUD</NavLink></li>
                         <li className="nav-item"><NavLink className="nav-link" >Log In</NavLink></li>
                     </ul>
                 </div>
