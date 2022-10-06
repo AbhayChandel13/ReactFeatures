@@ -75,10 +75,6 @@ export const Form = () => {
 
     const inputChangeHandler = (event) => {
 
-        if(FormData.firstName===""){
-            console.log("Can't be empty");
-        }
-
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
         formData.forEach((value, property) => responseBody[property] = value);
