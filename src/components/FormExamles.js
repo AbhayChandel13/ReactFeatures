@@ -38,7 +38,6 @@
 // import { useState } from "react"
 
 // export const Form = () => {
-//     // interface FormDataType {firstName:string, lastName: string, age: string}
 //     const formData = {firstName: "", lastName: "", age: ""}
 //     const [responseBody, setResponseBody] = useState(formData)
 
@@ -70,7 +69,6 @@
 
 export const Form = () => {
 
-    // interface formDataType {[key:string]: FormDataEntryValue}
     const responseBody= {}
 
     const inputChangeHandler = (event) => {
