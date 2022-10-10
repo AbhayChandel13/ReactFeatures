@@ -30,11 +30,6 @@
 //     )
 // }
 
-
-
-
-
-
 // import { useState } from "react"
 
 // export const Form = () => {
@@ -64,36 +59,40 @@
 //     )
 // }
 
-
-
-
 export const Form = () => {
+  const responseBody = {};
 
-    const responseBody= {}
-
-    const inputChangeHandler = (event) => {
-
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
-        formData.forEach((value, property) => responseBody[property] = value);
-        console.log(JSON.stringify(responseBody))
-	//Form submission happens here
-    }
-    return(
-        <form onSubmit={inputChangeHandler}>
-            <div><label htmlFor="firstName">First Name</label></div>
-            <div><input id="firstName" name="firstName" type="text"/></div>
-            <div><label htmlFor="lastName">Last Name</label></div>
-            <div><input id="lastName" name="lastName" type="text"/></div>
-            <div><label htmlFor="age">Age</label></div>
-            <div><input id="age" name="age" type="number"/></div>
-            <input type="submit"/>
-        </form>
-    )
-}
-
-
- 
+  const inputChangeHandler = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    formData.forEach((value, property) => (responseBody[property] = value));
+    console.log(JSON.stringify(responseBody));
+    //Form submission happens here
+  };
+  return (
+    <form onSubmit={inputChangeHandler}>
+      <div>
+        <label htmlFor="firstName">First Name</label>
+      </div>
+      <div>
+        <input id="firstName" name="firstName" type="text" />
+      </div>
+      <div>
+        <label htmlFor="lastName">Last Name</label>
+      </div>
+      <div>
+        <input id="lastName" name="lastName" type="text" />
+      </div>
+      <div>
+        <label htmlFor="age">Age</label>
+      </div>
+      <div>
+        <input id="age" name="age" type="number" />
+      </div>
+      <input type="submit" />
+    </form>
+  );
+};
 
 // const responseBody = {};
 
@@ -114,4 +113,4 @@ export const Form = () => {
 
 //     let newhoonmain = { ...responseBody, ...job };
 //     console.log("This is the New Object :", newhoonmain);
-    //console.log(responseBody);
+//console.log(responseBody);
