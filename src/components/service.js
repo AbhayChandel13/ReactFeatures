@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from "react";
 import DataTable from "react-data-table-component";
-import Rzorpay from "./Rzorpay";
+
 function Service(){
 	const [getData,setData] = useState([]);
 	const [search,setSearch] = useState("");
@@ -74,21 +74,6 @@ function Service(){
 return(
  <>
     <h1>Hi From the Service Page  </h1>
-
-	<section className="card-list">
-	{/* <div style={{height:"250px",width:"300px"}}> */}
-      <Rzorpay
-        courseName="Complete React Native 
-        Mobile App developer - Build 10 apps"
-        courseThumbnail=""
-        courseDetails="2 Free + 92 Paid"
-        coursePrice="2,999"
-        courseDiscountedPrice="199"
-        courseDiscount="93"
-		
-      />
-	  {/* </div> */}
-    </section>
 	<DataTable 
 	  title ="Employee Data"
 	  columns={columns} 
