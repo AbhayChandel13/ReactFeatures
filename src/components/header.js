@@ -7,7 +7,7 @@ function Header() {
       <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <div className="container px-5">
           <a className="navbar-brand" href="#page-top">
-            START REACT{" "}
+            START REACT
           </a>
           <button
             className="navbar-toggler"
