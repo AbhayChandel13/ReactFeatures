@@ -114,10 +114,3 @@ export const Form = () => {
 //     let newhoonmain = { ...responseBody, ...job };
 //     console.log("This is the New Object :", newhoonmain);
 //console.log(responseBody);
-
-
-
-
-
-
-
