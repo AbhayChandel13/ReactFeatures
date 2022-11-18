@@ -79,8 +79,6 @@ const AddUser = () => {
           />
         </div>
 
-
-
         <div className="form-group col-sm-8 mb-3">
           <input
             type="text"
