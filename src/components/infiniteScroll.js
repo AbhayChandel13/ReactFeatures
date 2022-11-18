@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function InfiniteScroll() {
-  
   const [pokemon, setPokemon] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setpage] = useState(0);
@@ -17,8 +16,8 @@ export default function InfiniteScroll() {
         data.forEach((p) => tenPokemon.push(p.title));
         setPokemon((pokemon) => [...pokemon, ...tenPokemon]);
       });
-      let newpage = page + 1;
-      setpage(newpage);
+    let newpage = page + 1;
+    setpage(newpage);
   };
   // console.log(pokemon);
   const handleScroll = (e) => {
