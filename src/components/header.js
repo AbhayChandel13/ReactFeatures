@@ -44,7 +44,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/loadmore">
-                  Load ee
+                  Load mor
                 </NavLink>
               </li>
               <li className="nav-item">
